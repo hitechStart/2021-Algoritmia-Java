@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"trainning.servilogist","l":"Camion"},{"p":"trainning.servilogist","l":"Conductor"},{"p":"trainning.servilogist","l":"Modo"},{"p":"trainning.servilogist","l":"Persona"},{"p":"trainning.servilogist","l":"Test"},{"p":"trainning.servilogist","l":"Vehiculo"}]

@@ -18,6 +18,20 @@ import java.util.Scanner;
  *
  * @author Maximiliano Di Ludovico
  */
+
+/*
+Especificacion de requisitos:
+
+La empresa de logística SERVILOGIST desea analizar el peso de la carga transportada por sus 155 camiones.
+Le empresa cuenta con una báscula pública que tiene a la salida de los vehículos. Cuenta con los siguientes
+datos de cada camión:
+- número de interno (int, entre 301 y 500).
+- peso de la carga transportada (float).
+Desarrollar el diagrama de lógica y su correspondiente codificación en C para que permita determinar e
+informar:
+a) El número de interno del camión que más peso ha tenido.
+b) Hallar el Promedio del peso de los camiones.
+*/
 public class Test {
 
     public static Map<Integer, Double> CargarUnaColeccion(Map<Integer, Double> map) {
@@ -73,6 +87,7 @@ public class Test {
 
         String[] datos;
         String linea;
+        boolean isNumeric = true;
         File fichero = new File("fichero.json");
         Scanner s = null;
 
@@ -87,6 +102,17 @@ public class Test {
                     linea = linea.replaceAll("\"", "");
                     datos = linea.split(":");
                     contadorDeCamiones++;
+
+                    if (contadorDeCamiones > 155 || contadorDeCamiones <= 0) {
+                        System.out.println("Se produjo un error. La cantidad de camiones es mayor que el de la flota(155)");
+                        System.exit(1);
+                    }
+
+                    if (isNumeric != datos[0].matches("[+-]?\\d*(\\.\\d+)?") || isNumeric != datos[1].matches("[+-]?\\d*(\\.\\d+)?")) {
+
+                        System.out.println("Error. Exite un dato que no es numerico.Revise los datos de lectura.");
+                        System.exit(1);
+                    }
                     sumaDeLaCarga += Double.parseDouble(datos[1]);
 
                     if (Double.parseDouble(datos[1]) > pesoMaximo) {
@@ -106,9 +132,8 @@ public class Test {
                     s.close();
                 }
 
-                System.out.println("Cantidad: " + contadorDeCamiones + " peso maximo: " + pesoMaximo);
-                System.out.println("Interno :" + numeroDeInterno + " peso :" + pesoMaximo);
-                System.out.println("Promedio de la carga :"
+                System.out.println("Interno :" + numeroDeInterno + " peso :" + pesoMaximo + " contiene el peso maximo");
+                System.out.println("El promedio de la carga de la flota es :"
                         + Math.round((sumaDeLaCarga / contadorDeCamiones) * 100.0) / 100.0);
 
             } catch (Exception ex2) {

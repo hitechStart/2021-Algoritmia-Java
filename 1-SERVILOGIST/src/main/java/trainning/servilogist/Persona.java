@@ -15,6 +15,14 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(int dni, String nombre, String apellido, char sexo, int edad) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.sexo = sexo;
+        this.edad = edad;
+    }
+
     public void setDni(int dni) {
         this.dni = dni;
     }

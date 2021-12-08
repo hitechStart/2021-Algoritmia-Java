@@ -5,7 +5,7 @@ package trainning.servilogist;
  * 
  * @author Maximiliano Di Ludovico
  */
-public class Vehiculo {
+public class Vehiculo implements Modo{
     
     private String modelo;
     private String marca;
@@ -88,6 +88,9 @@ public class Vehiculo {
     public String toString() {
         return "Vehiculo{" + "modelo=" + modelo + ", marca=" + marca + ", kilometraje=" + kilometraje + ", Tipo=" + Tipo + ", color=" + color + ", velocidad=" + velocidad + ", peso=" + peso + '}';
     }
-    
-    
+      @Override
+    public String mando(String guiaDeMando,String TipoDeacelerador,String FormaDeFrenado)
+    {
+        return guiaDeMando+' '+TipoDeacelerador+' '+FormaDeFrenado;
+    }
 }
