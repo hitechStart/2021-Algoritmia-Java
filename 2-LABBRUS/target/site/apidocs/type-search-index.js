@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"trainning.labbrus","l":"Ensayo"},{"p":"trainning.labbrus","l":"LecturaFichero"},{"p":"trainning.labbrus","l":"ObjetosJson"},{"p":"trainning.labbrus","l":"Test"}]
